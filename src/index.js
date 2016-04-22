@@ -19,9 +19,8 @@ let element = `
 document.write(element)
 
 let el1 = `
-	<div class="${animations.root}">
-	  <div class"${animations.ball}"></div>
-	</div>
+	<div class="${animations.root}"></div>
+	<div class="${animations.root}"></div>
 `
 
 document.write(el1)

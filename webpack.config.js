@@ -1,3 +1,5 @@
+var webpack = require('webpack')
+
 module.exports = {
   entry: './src',
   output: {
@@ -20,4 +22,17 @@ module.exports = {
       }
     ],
   }
+
+  ,devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    progress: true,
+  }
+
+  ,plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ]
+
+
 }
