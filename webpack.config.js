@@ -26,7 +26,7 @@ module.exports = {
         test: /\.css/,
         loaders: [
           'style-loader', 
-          'css-loader?modules&importLoaders=1',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
           'postcss-loader'
         ],
         //loader: 'style-loader!css-loader?modules5',
@@ -37,7 +37,7 @@ module.exports = {
 
   ,plugins: [
     new NpmInstallPlugin({
-      cacheMin: 999999,  // --cache-min=999999 (prefer NPM cached version)
+      cacheMin: 999999, // --cache-min=999999 (prefer NPM cached version)
       save: true,       // --save
       saveDev: true,    // --save-dev
       saveExact: true,  // --save-exact
