@@ -3,7 +3,7 @@
 import greetings from './robot.js'
 import styles from './app.css'
 import animations from './scoped-animations.css'
-require("./alert.js")
+// require("./alert.js")
 
 
 document.write(

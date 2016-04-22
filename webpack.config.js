@@ -2,6 +2,7 @@
 
 var webpack = require('webpack')
 var NpmInstallPlugin = require('npm-install-webpack-plugin')
+var autoprefixer = require('autoprefixer')
 
 module.exports = {
   // Load `demo/index.js`
@@ -23,8 +24,12 @@ module.exports = {
       , 
       {
         test: /\.css/,
-        //loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader',
-        loader: 'style-loader!css-loader?modules',
+        loaders: [
+          'style-loader', 
+          'css-loader?modules&importLoaders=1',
+          'postcss-loader'
+        ],
+        //loader: 'style-loader!css-loader?modules5',
         include: __dirname + '/src',
       }
     ],
@@ -41,6 +46,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ]
 
+  ,postcss: function () {
+        return [autoprefixer];
+    }
+
   ,devServer: {
     contentBase: 'demo',
     historyApiFallback: true,
@@ -48,4 +57,5 @@ module.exports = {
     inline: true,
     progress: true,
   }
+
 }
