@@ -20,7 +20,7 @@ document.write(element)
 
 let el1 = `
 	<div class="${animations.root}"></div>
-	<div class="${animations.root}"></div>
+	<div class="${animations.ball}"></div>
 `
 
 document.write(el1)
